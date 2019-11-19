@@ -1,0 +1,119 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>联系我</title>
+            <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+			<link rel="icon" href="http://localhost/blog_web/image/favicon.ico" type="image/x-icon"/>
+            <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+            <script src="http://localhost/blog_web/js/jquery.min.js"></script>
+            <style>
+                .head_pic{
+                    height: 280px;
+                    overflow: hidden;
+                }
+                .head_pic image{
+                    width: 100%;
+                }
+				.ly form{
+					width:80%;
+					text-align:center;
+					margin:auto;
+					margin-bottom:20px;
+				}
+				.ly input{
+					width:50%;
+					margin:auto;
+					margin-bottom:20px;
+				}
+				.ly textarea{
+					width:50%;
+					margin:auto;
+					margin-bottom:20px;
+				}
+                .ly button{
+                    width:100px;
+                    margin:20px auto;
+                }
+                .ly span{
+                    display: block;
+                    margin-top: 5px;
+                    color: #ff0000;
+                    font-weight: bold;
+                }
+            </style>
+        </head>
+        <body style="background: #4D4D4D;">
+        <div class="container" style="width: 90%; margin: auto; margin-top: 50px; background: #FFFFFF;">
+            <div class="head"></div>
+            <div class="head_pic">
+                <img style="width:100%;height:100%;" src="http://localhost/blog_web/image/article_list_head_pic.gif">
+            </div>
+            <div align="center">
+                <h2>
+                    欢迎留言
+                </h2>
+            </div>
+			<div class="ly">
+				<form>
+					<input name="email" id="email" type="email" class="form-control" placeholder="请留下您的邮箱">
+					<textarea type="text" id="message" name="message" class="form-control" style="width: 50%; height:200px; margin: auto;"></textarea>
+                    <input type="hidden" id="time" name="time" class="form-control">
+                    <span id="mtip"></span>
+					<button type="button" class="btn btn-warning button"> 提 交 </button>
+				</form>
+			</div>
+        </div>
+        <div class="foot"></div>
+        </body>
+        </html>
+<script src="http://localhost/blog/js/jquery.js"></script>
+<script>
+    var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+    $(".button").click(function(){
+        if($("#email").val()==""){
+            $("#mtip").html("邮箱不能为空！");
+        }else if($("#message").val()==""){
+            $("#mtip").html("您还没填写留言内容！");
+        }else if(!reg.test($("#email").val())){
+            $("#mtip").html("请正确填写邮箱！");
+        }else{
+            nowtime();
+            $.ajax({
+                type:"post",
+                dataType:"json",
+                url:"http://localhost/blog_web/php/connect_add.php?email="+$("#email").val()+"&nr="+$("#message").val()+"&updatetime="+$("#time").val(),
+                async:false,
+                success:function(msg){
+                    if(msg == "1"){
+                        $("#mtip").html("留言成功！");
+                        $(".button").css("opacity","0.5");
+                        $(".button").css("pointer-events","none");
+                        setTimeout(function () { window.location.reload(); }, 2000);
+                    }else if(msg == "0"){
+                        $("#mtip").html("提交失败，请重新填写！");
+                    }else{
+                        $("#mtip").html("操作失败");;
+                    }
+                }
+            });
+        }
+
+    });
+    function getNow(s) {
+        return s < 10 ? '0' + s: s;
+    }
+    function nowtime(){
+        var myDate = new Date();
+        var year=myDate.getFullYear();        //获取当前年
+        var month=myDate.getMonth()+1;   //获取当前月
+        var date=myDate.getDate();            //获取当前日
+        var h=myDate.getHours();              //获取当前小时数(0-23)
+        var m=myDate.getMinutes();          //获取当前分钟数(0-59)
+        var s=myDate.getSeconds();
+        var now=year+'-'+getNow(month)+"-"+getNow(date)+" "+getNow(h)+':'+getNow(m)+":"+getNow(s);
+        $("#time").val(now);
+    }
+    $(".head").load("http://localhost/blog_web/html/head.html");
+    $(".foot").load("http://localhost/blog_web/html/foot.html");
+</script>

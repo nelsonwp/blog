@@ -1,0 +1,7 @@
+.video img{
+    cursor: pointer;
+    transition: all 0.6s;
+}
+.video img:hover{
+    transform: scale(1.4);
+}
