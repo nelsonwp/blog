@@ -1,7 +1,8 @@
-<?php $servername = "localhost";
-$username = "root";
-$password = "password";
-$dbname="db_blog";
+<?php 
+$servername = "db4free.net";
+$username = "nelsonwp";
+$password = "9c3563f1";
+$dbname="db_blogwp";
 try {
 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);     //连接数据库
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
