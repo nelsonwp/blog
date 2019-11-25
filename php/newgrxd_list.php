@@ -41,10 +41,10 @@ ul li{
 }
 </style>
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "password";
-$dbname="db_blog";
+$servername = "db4free.net";
+$username = "nelsonwp";
+$password = "9c3563f1";
+$dbname="db_blogwp";
 $date=date("Y-m-d");
 try {
 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);     //连接数据库
@@ -55,7 +55,7 @@ $result = $conn->query($sql);
     ?>
 <div class="bg">
 <span style="font-size:20px; color:#ef1010; font-weight:bold; margin-left:10px; /*margin-top:10px; margin-bottom:8px;*/"><span class="fa fa-book"></span>&nbsp;近期日志</span>
-<a class="btn btn-warning" style="margin-left:70%;/*margin-top:10px; margin-bottom:8px;*/" href="http://localhost/blog_web/html/xd_list.html">更多>></a>
+<a class="btn btn-warning" style="margin-left:70%;/*margin-top:10px; margin-bottom:8px;*/" href="https://nelsonwp.github.io/blog/html/xd_list.html">更多>></a>
 	<ul style="padding:0;">
 <?php
 while($row=$result->fetch()){//操作数据
