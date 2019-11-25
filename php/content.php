@@ -1,9 +1,9 @@
 <?php
 $id = $_GET['id'];
-$servername = "localhost";
-$username = "root";
-$password = "password";
-$dbname="db_blog";
+$servername = "db4free.net";
+$username = "nelsonwp";
+$password = "9c3563f1";
+$dbname="db_blogwp";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);     //连接数据库
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -17,7 +17,7 @@ try {
             <meta charset="UTF-8">
             <title><?php echo $row['title']; ?>_王盼个人博客</title>
             <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-			<link rel="icon" href="http://localhost/blog_web/image/favicon.ico" type="image/x-icon"/>
+			<link rel="icon" href="https://nelsonwp.github.io/blog/image/favicon.ico" type="image/x-icon"/>
 			<link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
             <style>
                 .head_pic{
@@ -47,7 +47,7 @@ try {
         <div class="container" style="width: 90%; margin: auto; margin-top: 50px; background: #FFFFFF;">
             <div class="head"></div>
             <div class="head_pic">
-                <img style="width:100%;height:100%;" src="http://localhost/blog_web/image/article_list_head_pic.gif">
+                <img style="width:100%;height:100%;" src="https://nelsonwp.github.io/blog/image/article_list_head_pic.gif">
             </div>
             <div align="center">
                 <h2>
@@ -91,9 +91,9 @@ catch(PDOException $e)
         }
         return pwd;
     }
-    $(".head").load("http://localhost/blog_web/html/head.html");
-	$(".liuyan").load("http://localhost/blog_web/php/liuyan.php?title="+$("#artitle").val());
-    $(".foot").load("http://localhost/blog_web/html/foot.html");
+    $(".head").load("https://nelsonwp.github.io/blog/html/head.html");
+	$(".liuyan").load("https://nelsonwp.github.io/blog/php/liuyan.php?title="+$("#artitle").val());
+    $(".foot").load("https://nelsonwp.github.io/blog/html/foot.html");
 	$(window).scroll(function(){
 	// 滚动条距离顶部的距离 大于 200px时
 	if($(window).scrollTop() >= 200){
