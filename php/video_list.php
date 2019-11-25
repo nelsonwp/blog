@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "password";
-$dbname="db_blog";
+$servername = "db4free.net";
+$username = "nelsonwp";
+$password = "9c3563f1";
+$dbname="db_blogwp";
 $lm=$_GET["lm"];
 $name=$_GET['name'];
 try {
@@ -18,9 +18,9 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <title>王盼_个人博客</title>
-	<link rel="icon" href="http://localhost/blog_web/image/favicon.ico" type="image/x-icon"/>
+	<link rel="icon" href="https://nelsonwp.github.io/blog/image/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
-    <script src="http://localhost/blog_web/js/jquery.min.js"></script>
+    <script src="https://nelsonwp.github.io/blog/js/jquery.min.js"></script>
     <style>
 		.ul{
 			margin:0 auto; 
@@ -117,7 +117,7 @@ $result = $conn->query($sql);
 <body style="background: #2E2E2E;">
 <div class="head"></div>
 <div class="head_pic">
-    <img style="width:100%; height:100%;" src="http://localhost/blog_web/image/article_list_head_pic.gif">
+    <img style="width:100%; height:100%;" src="https://nelsonwp.github.io/blog/image/article_list_head_pic.gif">
 </div>
 <div class="dqwz">
     <h3>当前位置：</h3>
@@ -129,8 +129,8 @@ $result = $conn->query($sql);
 <ul class="ul">
     <?php
     while($row=$result->fetch()){//操作数据
-        /*echo "<a href='http://localhost/blog_web/php/content.php?id=".$row['xh']."' target='_blank'  class='lbmc bg-success'>".$row['title']."<span>".$row['up_date']."</span></a>";*/
-		echo "<li class='ili'><a href='http://localhost/blog_web/php/video_play.php?wjm=".$row['wj_name']."&name=".$name."'><img class='limg' src='".$row['url']."'></a></li>";
+        /*echo "<a href='https://nelsonwp.github.io/blog/php/content.php?id=".$row['xh']."' target='_blank'  class='lbmc bg-success'>".$row['title']."<span>".$row['up_date']."</span></a>";*/
+		echo "<li class='ili'><a href='https://nelsonwp.github.io/blog/php/video_play.php?wjm=".$row['wj_name']."&name=".$name."'><img class='limg' src='".$row['url']."'></a></li>";
     }
     }
     catch(PDOException $e)
@@ -145,8 +145,8 @@ $result = $conn->query($sql);
 <div class="foot" style="position: relative; top: 20px; width: 100%;overflow: hidden; "></div>
 </body>
 <script>
-    $(".head").load("http://localhost/blog_web/html/head.html");
-    $(".foot").load("http://localhost/blog_web/html/foot.html");
+    $(".head").load("https://nelsonwp.github.io/blog/html/head.html");
+    $(".foot").load("https://nelsonwp.github.io/blog/html/foot.html");
 $(window).scroll(function(){
 	// 滚动条距离顶部的距离 大于 200px时
 	if($(window).scrollTop() >= 200){
