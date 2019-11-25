@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "password";
-$dbname="db_blog";
+$servername = "db4free.net";
+$username = "nelsonwp";
+$password = "9c3563f1";
+$dbname="db_blogwp";
 try {
     $nr=$_GET["nr"];
     $update=$_GET["updatetime"];
