@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>王盼_个人博客</title>
-	<link rel="icon" href="http://localhost/blog_web/image/favicon.ico" type="image/x-icon"/>
+	<link rel="icon" href="https://nelsonwp.github.io/blog/image/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
-    <script src="http://localhost/blog_web/js/jquery.min.js"></script>
+    <script src="https://nelsonwp.github.io/blog/js/jquery.min.js"></script>
     <style>
         .head_pic{
             margin-top: 20px;
@@ -43,14 +43,14 @@
 <body style="background: #2E2E2E;">
 <div class="head"></div>
 <div class="head_pic">
-    <img style="width:100%;height:100%;" src="http://localhost/blog_web/image/article_list_head_pic.gif">
+    <img style="width:100%;height:100%;" src="https://nelsonwp.github.io/blog/image/article_list_head_pic.gif">
 </div>
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "password";
-$dbname="db_blog";
+$servername = "db4free.net";
+$username = "nelsonwp";
+$password = "9c3563f1";
+$dbname="db_blogwp";
 $wj=$_GET["wjm"];
 $name=$_GET['name'];
 $date=date("Y-m-d");
@@ -90,7 +90,7 @@ catch(PDOException $e)
 <div class="foot" style="position: relative; top: 20px; width: 100%;overflow: hidden; "></div>
 </body>
 <script>
-    $(".head").load("http://localhost/blog_web/html/head.html");
-    $(".foot").load("http://localhost/blog_web/html/foot.html");
+    $(".head").load("https://nelsonwp.github.io/blog/html/head.html");
+    $(".foot").load("https://nelsonwp.github.io/blog/html/foot.html");
 
 </script>
