@@ -6,7 +6,7 @@ ul li{
 	list-style:none;
 }
 .bg{
-	background:url("http://localhost/blog_web/image/xdbg.jpg") no-repeat  center;
+	background:url("https://nelsonwp.github.io/blog/image/xdbg.jpg") no-repeat  center;
 	 background-size:100% 100%;
 	width:80%;
 	height:100%;
@@ -39,10 +39,10 @@ ul li{
 }
 </style>
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "password";
-$dbname="db_blog";
+$servername = "db4free.net";
+$username = "nelsonwp";
+$password = "9c3563f1";
+$dbname="db_blogwp";
 $date=date("Y-m-d");
 try {
 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);     //连接数据库
