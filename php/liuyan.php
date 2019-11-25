@@ -10,10 +10,10 @@
         <h4>历史评论：</h4>
     <ul id="ul" style="border: 1px solid #4D4D4D; width:80%; margin:auto;">
 	<?php
-$servername = "localhost";
-$username = "root";
-$password = "password";
-$dbname="db_blog";
+$servername = "db4free.net";
+$username = "nelsonwp";
+$password = "9c3563f1";
+$dbname="db_blogwp";
 $title=$_GET['title'];
 try {
     $nr=$_POST["nr"];
@@ -58,7 +58,7 @@ $().ready(function(){
 		$.ajax({
 		type:"post",
 		dataType:"json",
-		url:"http://localhost/blog_web/php/liuyan_add.php?username="+$("#hid").val()+"&nr="+$("#ly").val()+"&updatetime="+$("#hid1").val()+"&title="+$("#hidde").val(),
+		url:"https://nelsonwp.github.io/blog/php/liuyan_add.php?username="+$("#hid").val()+"&nr="+$("#ly").val()+"&updatetime="+$("#hid1").val()+"&title="+$("#hidde").val(),
 		async:false,
 		success:function(msg){
 			if(msg == "1"){
