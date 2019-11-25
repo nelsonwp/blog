@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "password";
-$dbname="db_blog";
+$servername = "db4free.net";
+$username = "nelsonwp";
+$password = "9c3563f1";
+$dbname="db_blogwp";
 $date=date("Y-m-d");
 try {
 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);     //连接数据库
